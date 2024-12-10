@@ -27,7 +27,7 @@ const Dashboard = () => {
     isLoading,
     isSuccess
   } = useGetDataQuery('dashboard',{
-    pollingInterval: 30000,
+    pollingInterval: 150000,
     refetchOnFocus: true,
     refetchOnMountOrArgChange: true
   });

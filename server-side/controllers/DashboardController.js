@@ -48,9 +48,9 @@ const login =  async (req,res) => {
 
                 const data = { email: user?.email }
                 
-                const accessToken = jwt.sign(data, process.env.ACCESS_TOKEN_SECRET,{ expiresIn: '30s'} )
+                const accessToken = jwt.sign(data, process.env.ACCESS_TOKEN_SECRET,{ expiresIn: '15m'} )
                 
-                const refreshToken = jwt.sign(data, process.env.REFRESH_TOKEN_SECRET,{ expiresIn: '1d'} )
+                const refreshToken = jwt.sign(data, process.env.REFRESH_TOKEN_SECRET,{ expiresIn: '3d'} )
 
                 await UserModel.findOneAndUpdate(data,{
                     token: refreshToken
